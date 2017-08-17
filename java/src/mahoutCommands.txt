@@ -1,0 +1,3 @@
+hadoop jar mahout/mahout-examples-0.9-job.jar org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles -i /hadoop-data/YelpOut -o /data/yelp/YelpVectors -ow -x 90 -ng 2 -ml 50 -n 2 -nv -seq
+
+hadoop jar mahout/mahout-examples-0.9-job.jar org.apache.mahout.clustering.kmeans.KMeansDriver -i /hadoop-data/yelp/YelpVectors -c /hadoop-data/yelp/kmeans_centroids -o /hadoop-data/yelp/kmeans_clusters -gm org.apache.mahout.common.distance.CosineDistanceMeasure -x 10 -k 2 -ow -cl
